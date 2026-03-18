@@ -272,11 +272,3 @@ flask shell
 ## License
 
 This is a conversion of the original PHP application to Python. All original features and functionality are maintained.
-
-## Contributing
-
-Feel free to contribute improvements, bug fixes, and new features!
-
----
-
-**Happy coding!**

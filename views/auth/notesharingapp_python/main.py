@@ -48,9 +48,13 @@ def get_db():
 async def lifespan(app: FastAPI):
     # Startup
     print(f"🚀 Connecting to database: {DB_NAME}")
-    # Create tables if they don't exist
-    from app.models import Base
-    Base.metadata.create_all(bind=engine)
+    try:
+        # Create tables if they don't exist
+        from app.models import Base
+        Base.metadata.create_all(bind=engine)
+        print("✅ Database tables created/verified")
+    except Exception as e:
+        print(f"⚠️ Database initialization (this may be normal): {str(e)[:80]}")
     yield
     # Shutdown
     print("🛑 Application shutting down")

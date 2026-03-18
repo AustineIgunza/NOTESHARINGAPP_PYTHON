@@ -1,64 +1,6 @@
-# Notes Sharing Application - Python Flask Version
+# Notes Sharing Application
 
-A complete Python/Flask conversion of the Notes Sharing Application. This full-stack web application includes user authentication with 2FA, notes management, favorites system, file uploads, and a complete admin panel.
-
-## Quick Start
-
-### Prerequisites
-- Python 3.8+
-- MySQL/MariaDB
-- pip (Python package manager)
-
-### Installation
-
-1. **Clone or navigate to the project**
-   ```bash
-   cd notesharingapp_python
-   ```
-
-2. **Create and activate virtual environment**
-   ```bash
-   python -m venv venv
-   # On Windows
-   venv\Scripts\activate
-   # On Linux/Mac
-   source venv/bin/activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure environment**
-   ```bash
-   cp .env.example .env
-   ```
-   Edit `.env` with your database and email credentials:
-   ```
-   DB_HOST=127.0.0.1
-   DB_USER=root
-   DB_PASS=your_password
-   DB_NAME=notesharingapp_python
-   
-   MAIL_USERNAME=your_email@gmail.com
-   MAIL_PASSWORD=your_app_password
-   ```
-
-5. **Initialize database**
-   ```bash
-   python run.py
-   # In another terminal, run:
-   # flask init-db
-   # flask seed-db
-   ```
-
-6. **Run the application**
-   ```bash
-   python run.py
-   ```
-
-The application will be available at: http://localhost:5000
+A complete Python/FastAPI Notes Sharing Application with user authentication, 2FA, notes management, favorites system, file uploads, and admin panel.
 
 ## Features
 
@@ -76,22 +18,18 @@ The application will be available at: http://localhost:5000
 - Categorize notes
 - Public/private note sharing
 - Note search functionality
-- Note versioning support
 
 ### Favorites System
 - Add/remove notes to favorites
 - Favorites page for quick access
 - Favorites analytics
-- Track most favorited notes
 
 ### Admin Panel
-- Complete admin dashboard
+- Admin dashboard
 - User management and statistics
 - Notes administration
 - Analytics and insights
 - Activity monitoring
-- Email whitelist admin access
-- Export functionality
 
 ### User Experience
 - Responsive Bootstrap 5 design

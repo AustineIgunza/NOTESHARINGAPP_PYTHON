@@ -20,11 +20,8 @@ def get_db():
     finally:
         db.close()
 
-# ============ SIGNIN ============
-
 @router.get("/signin", response_class=HTMLResponse)
 async def signin_page(request: Request):
-    """Sign in page"""
     from fastapi.templating import Jinja2Templates
     templates = Jinja2Templates(directory="templates")
     return templates.TemplateResponse("auth/signin.html", {"request": request})
@@ -38,20 +35,17 @@ async def signin(
     admin_login: bool = Form(False),
     db: Session = Depends(get_db)
 ):
-    """Handle sign in"""
     from fastapi.templating import Jinja2Templates
     templates = Jinja2Templates(directory="templates")
     
     email = email.lower().strip()
     
-    # Validate input
     if not email or not password:
         return templates.TemplateResponse("auth/signin.html", {
             "request": request,
             "error": "Email and password are required."
         }, status_code=400)
     
-    # Find user
     user = db.query(User).filter(User.email == email).first()
     
     if not user or not utils.verify_password(password, user.password):
@@ -66,7 +60,6 @@ async def signin(
             "error": "Your account has been deactivated."
         }, status_code=403)
     
-    # Check for admin login
     if admin_login:
         if not utils.is_admin_email(user.email):
             return templates.TemplateResponse("auth/signin.html", {
@@ -74,7 +67,6 @@ async def signin(
                 "error": "Admin access denied. You are not an administrator."
             }, status_code=403)
         
-        # Admin login - skip 2FA
         response = RedirectResponse(url="/admin/dashboard", status_code=303)
         response.set_cookie(key="user_id", value=str(user.id), max_age=86400)
         response.set_cookie(key="user_email", value=user.email, max_age=86400)
@@ -95,8 +87,6 @@ async def signin(
         
         return response
     
-    # Regular user login - require 2FA
-    # Generate OTP
     otp_code = utils.generate_otp()
     expires_at = datetime.utcnow() + timedelta(minutes=10)
     

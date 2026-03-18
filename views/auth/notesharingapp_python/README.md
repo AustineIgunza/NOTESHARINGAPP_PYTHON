@@ -2,7 +2,7 @@
 
 A complete Python/Flask conversion of the Notes Sharing Application. This full-stack web application includes user authentication with 2FA, notes management, favorites system, file uploads, and a complete admin panel.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.8+
@@ -60,47 +60,47 @@ A complete Python/Flask conversion of the Notes Sharing Application. This full-s
 
 The application will be available at: http://localhost:5000
 
-## 📋 Features
+## Features
 
 ### User Authentication
-- ✅ User registration with email validation
-- ✅ Secure login with 2FA (email OTP)
-- ✅ Password reset via email verification
-- ✅ Remember me functionality (30 days)
-- ✅ Session management and security
+- User registration with email validation
+- Secure login with 2FA (email OTP)
+- Password reset via email verification
+- Remember me functionality (30 days)
+- Session management and security
 
 ### Notes Management
-- ✅ Create, edit, delete notes
-- ✅ Rich text content support
-- ✅ File attachments (PDF, DOCX, images)
-- ✅ Categorize notes
-- ✅ Public/private note sharing
-- ✅ Note search functionality
-- ✅ Note versioning support
+- Create, edit, delete notes
+- Rich text content support
+- File attachments (PDF, DOCX, images)
+- Categorize notes
+- Public/private note sharing
+- Note search functionality
+- Note versioning support
 
 ### Favorites System
-- ✅ Add/remove notes to favorites
-- ✅ Favorites page for quick access
-- ✅ Favorites analytics
-- ✅ Track most favorited notes
+- Add/remove notes to favorites
+- Favorites page for quick access
+- Favorites analytics
+- Track most favorited notes
 
 ### Admin Panel
-- ✅ Complete admin dashboard
-- ✅ User management and statistics
-- ✅ Notes administration
-- ✅ Analytics and insights
-- ✅ Activity monitoring
-- ✅ Email whitelist admin access
-- ✅ Export functionality
+- Complete admin dashboard
+- User management and statistics
+- Notes administration
+- Analytics and insights
+- Activity monitoring
+- Email whitelist admin access
+- Export functionality
 
 ### User Experience
-- ✅ Responsive Bootstrap 5 design
-- ✅ Toast notifications
-- ✅ Form validation
-- ✅ Error handling
-- ✅ Loading states
+- Responsive Bootstrap 5 design
+- Toast notifications
+- Form validation
+- Error handling
+- Loading states
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 notesharingapp_python/
@@ -125,7 +125,7 @@ notesharingapp_python/
 └── README.md                    # This file
 ```
 
-## 🔐 Test Credentials
+## Test Credentials
 
 After seeding the database:
 
@@ -137,7 +137,7 @@ After seeding the database:
 - Email: `testuser@gmail.com`
 - Password: `password123`
 
-## 🛠️ Configuration
+## Configuration
 
 ### Environment Variables (.env)
 
@@ -169,7 +169,7 @@ MIN_PASSWORD_LENGTH=4
 MAX_UPLOAD_SIZE=16777216  # 16MB
 ```
 
-## 📦 Database Models
+## Database Models
 
 ### User
 - Full name, email, password
@@ -213,7 +213,7 @@ MAX_UPLOAD_SIZE=16777216  # 16MB
 - Expiration time
 - Device info and IP tracking
 
-## 🚀 Deployment
+## Deployment
 
 ### Development
 ```bash
@@ -235,7 +235,7 @@ gunicorn -w 4 -b 0.0.0.0:5000 'app:create_app()'
 6. Configure proper email server
 7. Use production database server
 
-## 🧪 Database Commands
+## Database Commands
 
 ```bash
 # Initialize database (create tables)
@@ -248,7 +248,7 @@ flask seed-db
 flask shell
 ```
 
-## 🔄 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /auth/signin` - User login
@@ -274,7 +274,7 @@ flask shell
 - `GET /admin/notes` - Notes management
 - `GET /admin/analytics` - Analytics
 
-## 📝 Features Implementation Notes
+## Features Implementation Notes
 
 ### 2FA System
 - 6-digit OTP sent via email
@@ -302,7 +302,7 @@ flask shell
 - IP address verification
 - Automatic token rotation
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Database Connection Error
 - Verify MySQL is running
@@ -324,21 +324,21 @@ flask shell
 - Verify email is in allowed domain
 - Check email spam folder
 
-## 📚 Resources
+## Resources
 
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [SQLAlchemy Documentation](https://www.sqlalchemy.org/)
 - [Flask-Login Documentation](https://flask-login.readthedocs.io/)
 - [Flask-Mail Documentation](https://flask-mail.readthedocs.io/)
 
-## 📄 License
+## License
 
 This is a conversion of the original PHP application to Python. All original features and functionality are maintained.
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to contribute improvements, bug fixes, and new features!
 
 ---
 
-**Happy coding!** 🎉
+**Happy coding!**
